@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoBot Learning - CoRL 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background: #f8f9fa;
+      color: #111;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #222;
+      margin: 0;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #666;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      background: #ffffff;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #0070f3;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: #111;
+      margin-bottom: 1rem;
+    }
+
+    .section p,
+    .section li {
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.9rem;
+      color: #999;
+      background: #f1f1f1;
+      margin-top: 4rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.6rem;
+      background-color: #0070f3;
+      color: white;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #0059c1;
+    }
+
+    .organizers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .organizer-card {
+      text-align: center;
+    }
+
+    .organizer-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 2px solid #eee;
+    }
+
+    .organizer-name {
+      font-weight: 600;
+      color: #222;
+      margin: 0.5rem 0;
+    }
+
+    .organizer-affiliation {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .speaker-card {
+      text-align: center;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .speaker-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #f0f0f0;
+    }
+
+    .speaker-name {
+      font-weight: 600;
+      color: #222;
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .speaker-affiliation {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .speaker-title {
+      color: #0070f3;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NoBot Learning</h1>
+    <p>CoRL 2025 Workshop on Robot Learning Without Robots</p>
+    <a href="#submit" class="cta-button">Submit a Paper</a>
+  </header>
+
+  <nav>
+    <a href="#theme">Theme</a>
+    <a href="#topics">Topics</a>
+    <a href="#submit">Call for Papers</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="section" id="theme">
+    <h2>Workshop Theme</h2>
+    <p>
+      <strong>NoBot Learning</strong> rethinks how we train robots. Can we develop robust robotic behaviors without touching physical robots? This workshop explores data-efficient, simulation-native, and human-centric training paradigms—leveraging AR/VR, human demonstration, and synthetic data to scale learning beyond the lab.
+    </p>
+  </div>
+
+  <div class="section" id="topics">
+    <h2>Topics of Interest</h2>
+    <ul>
+      <li>Human motion and teleoperation datasets</li>
+      <li>Sim-to-real transfer and sim-native learning</li>
+      <li>AR/VR for demonstration and annotation</li>
+      <li>Training with synthetic and crowd-sourced data</li>
+      <li>Hardware-free robot behavior supervision</li>
+      <li>Foundation models for robotics</li>
+      <li>Open benchmarks for robot-free learning</li>
+    </ul>
+  </div>
+
+  <div class="section" id="speakers">
+    <h2>Invited Speakers</h2>
+    <div class="speakers-grid">
+      <div class="speaker-card">
+        <img src="/assets/speaker1.png" alt="Coming Soon" class="speaker-image">
+        <div class="speaker-name">Speaker Name</div>
+        <div class="speaker-affiliation">Institution</div>
+        <div class="speaker-title">Talk Title</div>
+      </div>
+      <div class="speaker-card">
+        <img src="/assets/speaker2.png" alt="Coming Soon" class="speaker-image">
+        <div class="speaker-name">Speaker Name</div>
+        <div class="speaker-affiliation">Institution</div>
+        <div class="speaker-title">Talk Title</div>
+      </div>
+      <div class="speaker-card">
+        <img src="/assets/speaker3.png" alt="Coming Soon" class="speaker-image">
+        <div class="speaker-name">Speaker Name</div>
+        <div class="speaker-affiliation">Institution</div>
+        <div class="speaker-title">Talk Title</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="submit">
+    <h2>Call for Papers</h2>
+    <p>
+      We welcome short papers (2–4 pages, excluding references) describing innovative ideas, system demos, empirical results, or position statements. Selected submissions will be featured as posters or spotlight talks at the workshop.
+    </p>
+    <p>
+      <strong>Submission Deadline:</strong> August 15, 2025<br>
+      <strong>Notification:</strong> September 5, 2025
+    </p>
+  </div>
+
+  <div class="section" id="organizers">
+    <h2>Organizers</h2>
+    <div class="organizers-grid">
+      <div class="organizer-card">
+        <img src="/assets/younghyo.png" alt="Younghyo Park" class="organizer-image">
+        <div class="organizer-name">Younghyo Park</div>
+        <div class="organizer-affiliation">MIT</div>
+      </div>
+      <div class="organizer-card">
+        <img src="/assets/pulkit.png" alt="Coming Soon" class="organizer-image">
+        <div class="organizer-name">Pulkit Agrawal</div>
+        <div class="organizer-affiliation">MIT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email us at <a href="mailto:nobot2025@corl.ai" style="color: #0070f3">nobot2025@corl.ai</a></p>
+  </div>
+
+  <footer>
+    &copy; 2025 NoBot Learning Workshop @ CoRL — Designed with clarity and accessibility in mind.
+  </footer>
+</body>
+</html>
