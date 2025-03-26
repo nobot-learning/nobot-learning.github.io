@@ -151,41 +151,25 @@
     }
 
     @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Hide only navigation links on mobile */
+      }
+
       .nav-header {
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.5rem;
+        border-bottom: none;
       }
 
       .nav-title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .nav-conference {
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
 
       .nav-conference img {
         height: 20px;
-      }
-
-      .nav-links {
-        padding: 1rem 1.5rem;
-        justify-content: space-between;
-        gap: 0;
-        font-size: 0.95rem;
-      }
-
-      header {
-        padding: 3rem 1.5rem 2rem;
-      }
-
-      header h1 {
-        font-size: 2.8rem;
-      }
-
-      header p {
-        font-size: 1.1rem;
-        margin: 1rem 0;
-        padding: 0 1rem;
       }
 
       .section {
@@ -193,32 +177,43 @@
         margin: 2.5rem auto;
       }
 
+      #theme {
+        margin: 2rem 1.5rem;
+        padding: 2rem 0;
+      }
+
       .quote {
-        font-size: 1.3rem;
-        padding: 0 1.5rem;
+        padding: 0 2rem;
         margin: 2rem 0;
+        font-size: 1.3rem;
+        line-height: 1.6;
       }
     }
 
     @media (max-width: 480px) {
       .nav-header {
-        padding: 1rem 1.2rem;
-      }
-
-      .nav-links {
         padding: 0.8rem 1.2rem;
       }
 
-      header h1 {
-        font-size: 2.4rem;
+      .nav-title {
+        font-size: 1rem;
       }
 
-      header p {
-        font-size: 1rem;
+      .nav-conference {
+        font-size: 0.9rem;
       }
 
       .section {
         padding: 0 1.2rem;
+      }
+
+      #theme {
+        margin: 2rem 1.2rem;
+      }
+
+      .quote {
+        padding: 0 1.5rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -244,14 +239,15 @@
       position: relative;
       padding: 2rem 0;
       margin: 2rem auto;
+      max-width: 800px;
     }
 
     #theme::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
+      left: 1.5rem;
+      right: 1.5rem;
       height: 4px;
       background: linear-gradient(90deg, #0070f3, #00a8ff);
     }
@@ -260,8 +256,8 @@
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
-      right: 0;
+      left: 1.5rem;
+      right: 1.5rem;
       height: 2px;
       background: linear-gradient(90deg, #0070f3, #00a8ff);
     }
@@ -271,6 +267,7 @@
       line-height: 1.8;
       color: #444;
       margin: 0;
+      padding: 0 1.5rem;
     }
 
     #theme strong {
@@ -283,7 +280,7 @@
       font-weight: 600;
       color: #222;
       text-align: center;
-      margin: 1rem 0 2rem 0;
+      margin: 1rem 1.5rem 2rem;
       padding: 0 1rem;
       position: relative;
       font-style: italic;
@@ -458,6 +455,35 @@
 
     .apple-logo:hover {
       opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      #theme::before,
+      #theme::after {
+        left: 1.5rem;
+        right: 1.5rem;
+      }
+
+      .quote {
+        margin: 1rem 1.5rem 2rem;
+        padding: 0 1rem;
+        font-size: 1.3rem;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #theme::before,
+      #theme::after {
+        left: 1.2rem;
+        right: 1.2rem;
+      }
+
+      .quote {
+        margin: 1rem 1.2rem 2rem;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
