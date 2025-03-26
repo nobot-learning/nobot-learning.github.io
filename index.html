@@ -99,6 +99,28 @@
       color: #666;
       font-weight: 600;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-conference a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-conference a:hover {
+      color: #0070f3;
+      border-bottom: none;
+    }
+
+    .nav-conference img {
+      height: 24px;
+      width: auto;
+      vertical-align: middle;
     }
 
     nav a {
@@ -376,7 +398,12 @@
   <nav>
     <div class="nav-header">
       <a href="#" class="nav-title">NoBot Learning Workshop</a>
-      <div class="nav-conference">CoRL 2025</div>
+      <div class="nav-conference">
+        <a href="https://www.corl.org/home" target="_blank" rel="noopener noreferrer">
+          CoRL 2025
+          <img src="/assets/corl_logo.png" alt="CoRL Logo">
+        </a>
+      </div>
     </div>
     <div class="nav-links">
       <a href="#theme">Theme</a>
