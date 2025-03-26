@@ -6,6 +6,11 @@
   <title>NoBot Learning - CoRL 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-padding-top: 120px; /* Adjust based on your nav height */
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Manrope', sans-serif;
@@ -52,24 +57,80 @@
 
     nav {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+      flex-direction: column;
       background: #ffffff;
-      padding: 1rem 2rem;
+      padding: 0;
       border-bottom: 1px solid #eee;
       position: sticky;
       top: 0;
       z-index: 999;
     }
 
+    .nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #f0f0f0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 2rem;
+      width: 100%;
+      box-sizing: border-box;
+      background: #ffffff;
+    }
+
+    .nav-title {
+      font-weight: 800;
+      color: #222;
+      font-size: 1.2rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-conference {
+      color: #666;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
     nav a {
       color: #0070f3;
       text-decoration: none;
       font-weight: 600;
+      padding: 0.2rem 0;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      border-bottom: 2px solid #0070f3;
+    }
+
+    @media (max-width: 768px) {
+      .nav-header {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        padding: 1rem;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        gap: 1.5rem;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
     }
 
     .section {
@@ -88,6 +149,74 @@
     .section li {
       font-size: 1.05rem;
       color: #444;
+    }
+
+    #theme {
+      position: relative;
+      padding: 2rem 0;
+      margin: 2rem auto;
+    }
+
+    #theme::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0070f3, #00a8ff);
+    }
+
+    #theme::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #0070f3, #00a8ff);
+    }
+
+    #theme p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #444;
+      margin: 0;
+    }
+
+    #theme strong {
+      color: #0070f3;
+      font-weight: 800;
+    }
+
+    .quote {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #222;
+      text-align: center;
+      margin: 1rem 0 2rem 0;
+      padding: 0 1rem;
+      position: relative;
+      font-style: italic;
+    }
+
+    .quote::before,
+    .quote::after {
+      content: '"';
+      font-size: 3rem;
+      color: #0070f3;
+      opacity: 0.3;
+      position: absolute;
+    }
+
+    .quote::before {
+      left: -0.5rem;
+      top: -0.5rem;
+    }
+
+    .quote::after {
+      right: -0.5rem;
+      bottom: -1rem;
     }
 
     ul {
@@ -198,39 +327,95 @@
       font-size: 0.95rem;
       font-style: italic;
     }
+
+    .sponsors-section {
+      text-align: center;
+      padding: 2rem 0;
+      background: #f8f9fa;
+      margin: 4rem 0;
+    }
+
+    .sponsors-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .sponsor-logo {
+      height: 60px;
+      width: auto;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .sponsor-logo:hover {
+      opacity: 1;
+    }
+
+    .sponsor-name {
+      font-size: 1.2rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+
+    .apple-logo {
+      font-size: 3.5rem;
+      color: #000;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .apple-logo:hover {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="nav-header">
+      <a href="#" class="nav-title">NoBot Learning Workshop</a>
+      <div class="nav-conference">CoRL 2025</div>
+    </div>
+    <div class="nav-links">
+      <a href="#theme">Theme</a>
+      <a href="#topics">Topics</a>
+      <a href="#submit">Call for Papers</a>
+      <a href="#organizers">Organizers</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <header>
     <h1>NoBot Learning</h1>
     <p>CoRL 2025 Workshop on Robot Learning Without Robots</p>
     <a href="#submit" class="cta-button">Submit a Paper</a>
   </header>
 
-  <nav>
-    <a href="#theme">Theme</a>
-    <a href="#topics">Topics</a>
-    <a href="#submit">Call for Papers</a>
-    <a href="#organizers">Organizers</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <div class="section" id="theme">
-    <h2>Workshop Theme</h2>
+    <div class="quote">
+      Robots need massive data to be useful<br>
+      — but what if there's not enough robots in the world to collect it?
+    </div>
     <p>
-      <strong>NoBot Learning</strong> rethinks how we train robots. Can we develop robust robotic behaviors without touching physical robots? This workshop explores data-efficient, simulation-native, and human-centric training paradigms—leveraging AR/VR, human demonstration, and synthetic data to scale learning beyond the lab.
+      <strong>NoBot Learning</strong> confronts a fundamental challenge in robotics: the chicken-and-egg problem of robot intelligence. 
+      To make robots smarter, we need massive datasets collected by robots—but collecting such data requires already-smart robots deployed in the real world! 
+      This workshop aims to explore the possibility of a paradigm shift: instead of waiting for robot hardware to proliferate, 
+      we explore how to make robots smarter without any physical robots. 
+      Through human demonstrations, AR/VR, and synthetic data, we aim to create internet-scale datasets that could catalyze the development 
+      of generalist robot foundation models.
     </p>
   </div>
 
   <div class="section" id="topics">
     <h2>Topics of Interest</h2>
     <ul>
-      <li>Human motion and teleoperation datasets</li>
-      <li>Sim-to-real transfer and sim-native learning</li>
-      <li>AR/VR for demonstration and annotation</li>
+      <li>Using human videos and motions to train robots</li>
+    <li>AR/VR for robot-free data collection</li>
+      <li>Sim-native learning with sim-to-real transfer</li>
+      <li>Specialized robot-free data collection hardware systems</li>
       <li>Training with synthetic and crowd-sourced data</li>
-      <li>Hardware-free robot behavior supervision</li>
-      <li>Foundation models for robotics</li>
       <li>Open benchmarks for robot-free learning</li>
     </ul>
   </div>
@@ -283,6 +468,17 @@
         <div class="organizer-name">Pulkit Agrawal</div>
         <div class="organizer-affiliation">MIT</div>
       </div>
+    </div>
+  </div>
+
+  <div class="section" id="sponsors">
+    <h2>Sponsors</h2>
+    <div class="sponsors-grid">
+      <div class="sponsor">
+        <div class="apple-logo"></div>
+        <div class="sponsor-name">Apple</div>
+      </div>
+      <!-- Add more sponsors here as they confirm -->
     </div>
   </div>
 
