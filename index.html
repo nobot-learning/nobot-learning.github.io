@@ -101,7 +101,7 @@
       white-space: nowrap;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
     }
 
     .nav-conference a {
@@ -121,6 +121,21 @@
       height: 24px;
       width: auto;
       vertical-align: middle;
+    }
+
+    .conference-info {
+      font-size: 0.9rem;
+      color: #888;
+      font-weight: normal;
+      border-left: 1px solid #ddd;
+      padding-left: 1rem;
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .conference-info {
+        display: inline;
+      }
     }
 
     nav a {
@@ -403,6 +418,7 @@
           CoRL 2025
           <img src="/assets/corl_logo.png" alt="CoRL Logo">
         </a>
+        <span class="conference-info">September 27 - 30, 2025 | Seoul, Korea</span>
       </div>
     </div>
     <div class="nav-links">
