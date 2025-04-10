@@ -337,7 +337,7 @@
 
     .organizers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(5, 1fr); /* All organizers in one row */
       gap: 2rem;
       margin-top: 1.5rem;
     }
@@ -383,7 +383,7 @@
 
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr); /* Three speakers per row on PC */
       gap: 2rem;
       margin-top: 1.5rem;
     }
@@ -391,6 +391,18 @@
     @media (max-width: 768px) {
       .speakers-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .organizers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .organizers-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -586,6 +598,12 @@
       <div class="speaker-card">
         <img src="/assets/jeannette.png" alt="Jeannette Bohg" class="speaker-image">
         <div class="speaker-name">Jeannette Bohg</div>
+        <div class="speaker-affiliation">Stanford</div>
+        <div class="speaker-title">Talk Title TBD</div>
+      </div>
+      <div class="speaker-card">
+        <img src="/assets/shuran.png" alt="Shuran Song" class="speaker-image">
+        <div class="speaker-name">Shuran Song</div>
         <div class="speaker-affiliation">Stanford</div>
         <div class="speaker-title">Talk Title TBD</div>
       </div>
