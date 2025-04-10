@@ -337,9 +337,28 @@
 
     .organizers-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* All organizers in one row */
+      grid-template-columns: repeat(3, 1fr); /* Three organizers in first row */
       gap: 2rem;
       margin-top: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .organizers-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three organizers in first row */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .organizers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .organizers-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .organizer-card {
