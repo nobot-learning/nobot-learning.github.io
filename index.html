@@ -383,9 +383,15 @@
 
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
       margin-top: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .speaker-card {
@@ -560,10 +566,22 @@
     <h2>Invited Speakers</h2>
     <div class="speakers-grid">
       <div class="speaker-card">
-        <img src="/assets/speaker3.png" alt="Coming Soon" class="speaker-image">
-        <div class="speaker-name">Speaker Name</div>
-        <div class="speaker-affiliation">Institution</div>
-        <div class="speaker-title">Talk Title</div>
+        <img src="/assets/xiaolong.png" alt="Xiaolong Wang" class="speaker-image">
+        <div class="speaker-name">Xiaolong Wang</div>
+        <div class="speaker-affiliation">UCSD</div>
+        <div class="speaker-title">Talk Title TBD</div>
+      </div>
+      <div class="speaker-card">
+        <img src="/assets/danfei.png" alt="Danfei Xu" class="speaker-image">
+        <div class="speaker-name">Danfei Xu</div>
+        <div class="speaker-affiliation">Georgia Tech</div>
+        <div class="speaker-title">Talk Title TBD</div>
+      </div>
+      <div class="speaker-card">
+        <img src="/assets/abhishek.png" alt="Abhishek Gupta" class="speaker-image">
+        <div class="speaker-name">Abhishek Gupta</div>
+        <div class="speaker-affiliation">University of Washington</div>
+        <div class="speaker-title">Talk Title TBD</div>
       </div>
     </div>
   </div>
