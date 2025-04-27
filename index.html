@@ -139,7 +139,7 @@
     }
 
     nav a {
-      color: #0070f3;
+      color: #0066e8;
       text-decoration: none;
       font-weight: 600;
       padding: 0.2rem 0;
@@ -147,7 +147,7 @@
 
     nav a:hover {
       text-decoration: none;
-      border-bottom: 2px solid #0070f3;
+      border-bottom: 2px solid #0066e8;
     }
 
     @media (max-width: 768px) {
@@ -249,7 +249,7 @@
       left: 1.5rem;
       right: 1.5rem;
       height: 4px;
-      background: linear-gradient(90deg, #0070f3, #00a8ff);
+      background: linear-gradient(90deg, #0066e8, #0099ff);
     }
 
     #theme::after {
@@ -259,7 +259,7 @@
       left: 1.5rem;
       right: 1.5rem;
       height: 2px;
-      background: linear-gradient(90deg, #0070f3, #00a8ff);
+      background: linear-gradient(90deg, #0066e8, #0099ff);
     }
 
     #theme p {
@@ -271,7 +271,7 @@
     }
 
     #theme strong {
-      color: #0070f3;
+      color: #0066e8;
       font-weight: 800;
     }
 
@@ -290,8 +290,8 @@
     .quote::after {
       content: '"';
       font-size: 3rem;
-      color: #0070f3;
-      opacity: 0.3;
+      color: #0066e8;
+      opacity: 0.4;
       position: absolute;
     }
 
@@ -323,7 +323,7 @@
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.8rem 1.6rem;
-      background-color: #0070f3;
+      background-color: #0066e8;
       color: white;
       font-weight: 600;
       border-radius: 6px;
@@ -332,7 +332,7 @@
     }
 
     .cta-button:hover {
-      background-color: #0059c1;
+      background-color: #0052cc;
     }
 
     .organizers-grid {
@@ -471,7 +471,7 @@
     }
 
     .speaker-title {
-      color: #0070f3;
+      color: #0066e8;
       font-size: 0.95rem;
       font-style: italic;
       position: relative;
@@ -589,6 +589,124 @@
         font-size: 1.2rem;
       }
     }
+
+    .schedule-container {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      background: white;
+    }
+
+    .schedule-table th {
+      background-color: #0066e8;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .schedule-table th:first-child {
+      border-top-left-radius: 10px;
+    }
+    
+    .schedule-table th:last-child {
+      border-top-right-radius: 10px;
+    }
+
+    .schedule-table td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .schedule-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .schedule-table tr:last-child td:first-child {
+      border-bottom-left-radius: 10px;
+    }
+    
+    .schedule-table tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
+    }
+
+    .intro-row {
+      background-color: #f0f2f5;
+    }
+
+    .talk-row {
+      background-color: #e8f4e8;
+    }
+
+    .break-row {
+      background-color: #e8f2ff;
+    }
+
+    .spotlight-row {
+      background-color: #fff3e0;
+    }
+
+    .panel-row {
+      background-color: #f9eaea;
+    }
+
+    .awards-row {
+      background-color: #f5e6d8;
+    }
+    
+    .schedule-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .legend-color {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    .intro-color {
+      background-color: #f0f2f5;
+    }
+
+    .talk-color {
+      background-color: #e8f4e8;
+    }
+
+    .break-color {
+      background-color: #e8f2ff;
+    }
+
+    .spotlight-color {
+      background-color: #fff3e0;
+    }
+
+    .panel-color {
+      background-color: #f9eaea;
+    }
+
+    .awards-color {
+      background-color: #f5e6d8;
+    }
   </style>
 </head>
 <body>
@@ -606,6 +724,8 @@
     <div class="nav-links">
       <a href="#theme">Theme</a>
       <a href="#topics">Topics</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#schedule">Schedule</a>
       <a href="#submit">Call for Papers</a>
       <a href="#organizers">Organizers</a>
       <a href="#contact">Contact</a>
@@ -703,6 +823,17 @@
           </div>
         </div>
       </div>
+      <div class="speaker-card">
+        <img src="/assets/ed.png" alt="Ed Johns" class="speaker-image">
+        <div class="speaker-name"><a href="https://www.robot-learning.uk/" target="_blank" rel="noopener noreferrer">Ed Johns</a></div>
+        <div class="speaker-affiliation">Imperial College London</div>
+        <div class="speaker-title">
+          Talk Title TBD
+          <div class="abstract-popup">
+            Abstract details will be announced soon.
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -715,6 +846,116 @@
       <strong>Submission Deadline:</strong> August 15, 2025<br>
       <strong>Notification:</strong> September 5, 2025
     </p>
+  </div>
+
+  <div class="section" id="schedule">
+    <h2>Workshop Schedule</h2>
+    <div class="schedule-legend">
+      <div class="legend-item"><span class="legend-color intro-color"></span>Introduction</div>
+      <div class="legend-item"><span class="legend-color talk-color"></span>Speaker Talks</div>
+      <div class="legend-item"><span class="legend-color break-color"></span>Breaks</div>
+      <div class="legend-item"><span class="legend-color spotlight-color"></span>Spotlight Talks</div>
+      <div class="legend-item"><span class="legend-color panel-color"></span>Panel Discussion</div>
+      <div class="legend-item"><span class="legend-color awards-color"></span>Awards</div>
+    </div>
+    <div class="schedule-container">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="intro-row">
+            <td>9:30 AM</td>
+            <td>9:40 AM</td>
+            <td>Introduction</td>
+          </tr>
+          <tr class="talk-row">
+            <td>9:40 AM</td>
+            <td>10:05 AM</td>
+            <td>Xiaolong Wang</td>
+          </tr>
+          <tr class="talk-row">
+            <td>10:05 AM</td>
+            <td>10:30 AM</td>
+            <td>Danfei Xu</td>
+          </tr>
+          <tr class="break-row">
+            <td>10:30 AM</td>
+            <td>11:00 AM</td>
+            <td>Coffee Break</td>
+          </tr>
+          <tr class="talk-row">
+            <td>11:00 AM</td>
+            <td>11:25 AM</td>
+            <td>Abhishek Gupta</td>
+          </tr>
+          <tr class="talk-row">
+            <td>11:25 AM</td>
+            <td>11:50 AM</td>
+            <td>Jeannette Bohg</td>
+          </tr>
+          <tr class="talk-row">
+            <td>11:50 AM</td>
+            <td>12:15 PM</td>
+            <td>Shuran Song</td>
+          </tr>
+          <tr class="spotlight-row">
+            <td>12:15 PM</td>
+            <td>12:30 PM</td>
+            <td>3 x 5min Poster Spotlight Talk</td>
+          </tr>
+          <tr class="break-row">
+            <td>12:30 PM</td>
+            <td>1:30 PM</td>
+            <td>Lunch Break</td>
+          </tr>
+          <tr class="talk-row">
+            <td>1:30 PM</td>
+            <td>1:55 PM</td>
+            <td>Ed Johns</td>
+          </tr>
+          <tr class="talk-row">
+            <td>1:55 PM</td>
+            <td>2:20 PM</td>
+            <td></td>
+          </tr>
+          <tr class="spotlight-row">
+            <td>2:20 PM</td>
+            <td>2:30 PM</td>
+            <td>2 x 5 min Poster Spotlight Talk</td>
+          </tr>
+          <tr class="break-row">
+            <td>2:30 PM</td>
+            <td>3:00 PM</td>
+            <td>Coffee Break</td>
+          </tr>
+          <tr class="talk-row">
+            <td>3:00 PM</td>
+            <td>3:25 PM</td>
+            <td></td>
+          </tr>
+          <tr class="talk-row">
+            <td>3:25 PM</td>
+            <td>3:50 PM</td>
+            <td></td>
+          </tr>
+          <tr class="panel-row">
+            <td>3:50 PM</td>
+            <td>4:20 PM</td>
+            <td>Panelist Discussion</td>
+          </tr>
+          <tr class="awards-row">
+            <td>4:20 PM</td>
+            <td>4:30 PM</td>
+            <td>Award Session</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="section" id="organizers">
