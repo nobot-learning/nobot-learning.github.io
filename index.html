@@ -770,7 +770,50 @@
         gap: 1.5rem;
       }
     }
+
+    .kst-clock {
+      text-align: center;
+      margin: 1rem 0 2rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .kst-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+
+    #kst-time {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0066e8;
+    }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function updateKSTTime() {
+        const now = new Date();
+        const kstTime = new Date(now.getTime() + (9 * 60 * 60 * 1000)); // Add 9 hours for KST
+        const options = { 
+          weekday: 'long',
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+          timeZone: 'Asia/Seoul'
+        };
+        document.getElementById('kst-time').textContent = kstTime.toLocaleString('en-US', options) + ' KST';
+      }
+      updateKSTTime();
+      setInterval(updateKSTTime, 1000);
+    });
+  </script>
 </head>
 <body>
   <nav>
@@ -970,6 +1013,10 @@
 
   <div class="section" id="schedule">
     <h2>Workshop Schedule</h2>
+    <div class="kst-clock">
+      <div class="kst-label">Current Time in Seoul:</div>
+      <div id="kst-time"></div>
+    </div>
     <div class="schedule-legend">
       <!-- <div class="legend-item"><span class="legend-color intro-color"></span>Introduction</div> -->
       <div class="legend-item"><span class="legend-color talk-color"></span>Speaker Talks</div>
@@ -996,12 +1043,12 @@
           <tr class="talk-row">
             <td>9:40 AM</td>
             <td>10:05 AM</td>
-            <td>Xiaolong Wang (UCSD)</td>
+            <td><a href="https://xiaolonw.github.io/" target="_blank" rel="noopener noreferrer">Xiaolong Wang</a> (UCSD)</td>
           </tr>
           <tr class="talk-row">
             <td>10:05 AM</td>
             <td>10:30 AM</td>
-            <td>Danfei Xu (Georgia Tech)</td>
+            <td><a href="https://faculty.cc.gatech.edu/~danfei/" target="_blank" rel="noopener noreferrer">Danfei Xu</a> (Georgia Tech)</td>
           </tr>
           <tr class="break-row">
             <td>10:30 AM</td>
@@ -1011,17 +1058,17 @@
           <tr class="talk-row">
             <td>11:00 AM</td>
             <td>11:25 AM</td>
-            <td>Abhishek Gupta (University of Washington)</td>
+            <td><a href="https://homes.cs.washington.edu/~abhgupta/" target="_blank" rel="noopener noreferrer">Abhishek Gupta</a> (University of Washington)</td>
           </tr>
           <tr class="talk-row">
             <td>11:25 AM</td>
             <td>11:50 AM</td>
-            <td>Jeannette Bohg (Stanford)</td>
+            <td><a href="https://web.stanford.edu/~bohg/" target="_blank" rel="noopener noreferrer">Jeannette Bohg</a> (Stanford)</td>
           </tr>
           <tr class="talk-row">
             <td>11:50 AM</td>
             <td>12:15 PM</td>
-            <td>Shuran Song (Stanford)</td>
+            <td><a href="https://shurans.github.io/" target="_blank" rel="noopener noreferrer">Shuran Song</a> (Stanford)</td>
           </tr>
           <tr class="spotlight-row">
             <td>12:15 PM</td>
@@ -1036,12 +1083,12 @@
           <tr class="talk-row">
             <td>1:30 PM</td>
             <td>1:55 PM</td>
-            <td>Ed Johns (Imperial College London)</td>
+            <td><a href="https://www.robot-learning.uk/" target="_blank" rel="noopener noreferrer">Ed Johns</a> (Imperial College London)</td>
           </tr>
           <tr class="talk-row">
             <td>1:55 PM</td>
             <td>2:20 PM</td>
-            <td>Hanbyul Joo (Seoul National University)</td>
+            <td><a href="https://jhugestar.github.io/" target="_blank" rel="noopener noreferrer">Hanbyul Joo</a> (Seoul National University)</td>
           </tr>
           <tr class="spotlight-row">
             <td>2:20 PM</td>
@@ -1056,12 +1103,12 @@
           <tr class="talk-row">
             <td>3:00 PM</td>
             <td>3:25 PM</td>
-            <td>Ajay U. Mandlekar (NVIDIA)</td>
+            <td><a href="https://ai.stanford.edu/~amandlek/" target="_blank" rel="noopener noreferrer">Ajay U. Mandlekar</a> (NVIDIA)</td>
           </tr>
           <tr class="talk-row">
             <td>3:25 PM</td>
             <td>3:50 PM</td>
-            <td>Pulkit Agrawal (MIT)</td>
+            <td><a href="https://people.csail.mit.edu/pulkitag/" target="_blank" rel="noopener noreferrer">Pulkit Agrawal</a> (MIT)</td>
           </tr>
           <tr class="panel-row">
             <td>3:50 PM</td>
